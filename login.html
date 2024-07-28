@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #4A8BDF;
+        }
+        form {
+            margin: 10px;
+            padding: 10px;
+            width: 500px;
+            background-color: #EFFAFD;
+            border-radius: 15px;
+        }
+        form #submit {
+            background-color: #4A8BDF;
+        }
+        footer {
+            background-color: #EFFAFD;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .form-header {
+            color: #4A8BDF;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar" style="background-color: #ffffff;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="dreambyte-index.html">
+                <img src="images/DreamByte-Company-Logo-svg (text-black).jpg" alt="DreamByte" width="200">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link active" aria-current="page" href="taller_ayala_ajedrez-index.html">
+                            <img src="images/Taller_de_Ajedrez-Logo-transparent.png" alt="Taller de Ajedrez Logo" width="100">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recuperacion_acceso-encargado.html">¿Perdiste tu acceso?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login-directivos.html">Directivos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login-alumnos.html">Miembros de taller</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <center>
+        <div class="container mt-4">
+            <form action="" class="needs-validation" novalidate>
+                <h1 class="form-header">Formulario de inicio de sesión</h1>
+                <p>Inicia sesión con los datos que te proporciono el CECyTE 04 Ayala</p>
+                <div class="row g-2">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com" required>
+                            <label for="floatingInputGrid" class="form-label">Correo Electrónico</label>
+                            <div class="valid-feedback">
+                                ¡Todo correcto!
+                            </div>
+                            <div class="invalid-feedback">
+                                <p id="emailError1">Por favor, ingrese su correo electrónico.</p>
+                                <p id="emailError2"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required minlength="8">
+                            <label for="floatingPassword" class="form-label">Contraseña</label>
+                            <div class="valid-feedback">
+                                ¡Todo correcto!
+                            </div>
+                            <div class="invalid-feedback">
+                                <p id="passwordError1">Por favor, ingrese su contraseña.</p>
+                                <p id="passwordError2"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <button class="btn btn-primary" type="submit" id="submit">Iniciar sesión</button>
+                </div>
+            </form>
+        </div>
+    </center>
+    <footer>
+        <p>Diseñado y programado por &copy;DreamByte Company</p>
+        <p>Licencia: <a href="LICENSE.txt" target="_blank">MIT License</a></p>
+    </footer>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+
+                        // Check individual form fields for validity
+                        const emailInput = document.getElementById('floatingInputGrid');
+                        const passwordInput = document.getElementById('floatingPassword');
+
+                        // Customize the label message based on validation state
+                        const emailError1 = document.getElementById('emailError1');
+                        const emailError2 = document.getElementById('emailError2');
+                        const passwordError1 = document.getElementById('passwordError1');
+                        const passwordError2 = document.getElementById('passwordError2');
+
+                        if (!emailInput.validity.valid) {
+                            emailError2.textContent = 'Correo Electrónico - Formato incorrecto';
+                        } else {
+                            emailError2.textContent = '';
+                        }
+
+                        if (!passwordInput.validity.valid) {
+                            if (passwordInput.validity.tooShort) {
+                                passwordError2.textContent = 'La contraseña debe contener al menos 8 caracteres';
+                            } else {
+                                passwordError2.textContent = 'Contraseña - Formato incorrecto';
+                            }
+                        } else {
+                            passwordError2.textContent = '';
+                        }
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+</html>
