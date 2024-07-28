@@ -10,7 +10,7 @@ Este proyecto proporciona un servicio web para la institución "Taller de Ajedre
 
 ## Uso
 
-- Accede al sitio web en [URL del sitio web].
+- Accede al sitio web en [https://lucyferstarlight.github.io/Sistema-asistencia_Taller-ajedrez/].
 
 ## Contribución
 
