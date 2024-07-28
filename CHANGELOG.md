@@ -1,10 +1,8 @@
 # Changelog
 
-## [1.0.0] - 2024-07-28
+## [1.0.1] - 2024-07-28 - Alfa
 ### Añadido
-- Página de inicio de sesión.
-- Validaciones personalizadas en el formulario.
+- Se añade el archivo .gitignore
 
 ### Cambiado
-- Mejoras en el diseño del navbar.
-- Personalización de los colores de la página.
+- Actualización del archivo CHANGELOG.md
